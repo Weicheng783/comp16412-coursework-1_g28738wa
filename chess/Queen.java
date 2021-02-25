@@ -15,7 +15,7 @@ public class Queen extends Piece{
         if(c-a==0 && d-b !=0){
             if(d-b < 0){
 
-                for (int i=b; i>=d, i--){
+                for (int i=b; i>=d; i--){
                     if(Board.hasPiece(a,i)==true && i!=d){
                         return false;
                     }else{
@@ -37,7 +37,7 @@ public class Queen extends Piece{
 
             }else if(d-b>0){
 
-                for (int i=b; i<=d, i++){
+                for (int i=b; i<=d; i++){
                     if(Board.hasPiece(a,i)==true && i!=d){
                         return false;
                     }else{
@@ -62,7 +62,7 @@ public class Queen extends Piece{
         }else if(d-b==0 && c-a!=0){
             if(c-a < 0){
 
-                for (int i=a; i>=c, i--){
+                for (int i=a; i>=c; i--){
                     if(Board.hasPiece(i,b)==true && i!=c){
                         return false;
                     }else{
@@ -84,7 +84,7 @@ public class Queen extends Piece{
 
             }else if(c-a>0){
 
-                for (int i=a; i<=c, i++){
+                for (int i=a; i<=c; i++){
                     if(Board.hasPiece(i,b)==true && i!=c){
                         return false;
                     }else{
@@ -198,5 +198,6 @@ public class Queen extends Piece{
         }else{
             return false;
         }
+        return false;
     }
 }

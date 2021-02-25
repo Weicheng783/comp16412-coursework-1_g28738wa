@@ -93,6 +93,8 @@ public class Bishop extends Piece{
                                 return true;
                             }
                             
+                        }else{
+                            continue;
                         }
                     }                    
                  } 
@@ -103,6 +105,7 @@ public class Bishop extends Piece{
         }else{
             return false;
         }
+        return false;
     }
 }
 
