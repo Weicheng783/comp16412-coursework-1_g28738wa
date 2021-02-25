@@ -25,7 +25,7 @@ public class Piece {
         return colour;
     }
 
-    public boolean isLegitMove(int a, int b, int c, int d){
-        return true;
+    public abstract boolean isLegitMove(int a, int b, int c, int d){
+        
     }
 }
