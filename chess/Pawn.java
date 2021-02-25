@@ -13,23 +13,112 @@ public class Pawn extends Piece{
     }
 
     public boolean isLegitMove(int a, int b, int c, int d){
-        if(c-a==0 && d-b>0){
+        if(d-b>0){//Blacks move
             if(d-b==2){
-                if( getColour() == WHITE ){
-                    if(b==6 && (a>=0 && a<=7) ){
-                        
-                    }
-                }else if( getColour() == BLACK){
-                    if(b==2 && (a>=0 && a<=7) ){
 
-                    }
+                if(c-a==1 | c-a==-1){
+                    if(Board.hasPiece(c,d)==true){
+                        if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
+                            return true;
+                        }else{
+                            return false;
+                        }
 
+                    }else{
+                        return false;
+                    }
                 }else{
-                    return false;
+                 if(b==1 && (a>=0 && a<=7) ){
+                    if(Board.hasPiece(c,d)==true){
+                        return false;
+                    }else if(Board.hasPiece(c,d+1)==true){
+                        return false;
+                    }else{
+                        return true;
+                    }
+
+                 }else{
+                     return false;
+                 }
+
                 }
+
+ 
             }else if(d-b==1){
+                if(c-a==1 | c-a==-1){
+                    if(Board.hasPiece(c,d)==true){
+                        if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
+                            return true;
+                        }else{
+                            return false;
+                        }
+
+                    }else{
+                        return false;
+                    }
+                }else{
+                    if(Board.hasPiece(c,d)==true){
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
 
             }
+
+        }else if(d-b<0){//Whites move
+            if(b-d==2){
+
+                if(c-a==1 | c-a==-1){
+                    if(Board.hasPiece(c,d)==true){
+                        if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
+                            return true;
+                        }else{
+                            return false;
+                        }
+
+                    }else{
+                        return false;
+                    }
+                }else{
+                 if(b==6 && (a>=0 && a<=7) ){
+                    if(Board.hasPiece(c,d)==true){
+                        return false;
+                    }else if(Board.hasPiece(c,d-1)==true){
+                        return false;
+                    }else{
+                        return true;
+                    }
+
+                 }else{
+                     return false;
+                 }
+
+                }
+
+ 
+            }else if(b-d==1){
+                if(c-a==1 | c-a==-1){
+                    if(Board.hasPiece(c,d)==true){
+                        if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
+                            return true;
+                        }else{
+                            return false;
+                        }
+
+                    }else{
+                        return false;
+                    }
+                }else{
+                    if(Board.hasPiece(c,d)==true){
+                        return false;
+                    }else{
+                        return true;
+                    }
+                }
+
+            }
+
         }else{
             return false;
         }
