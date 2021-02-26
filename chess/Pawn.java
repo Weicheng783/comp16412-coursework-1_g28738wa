@@ -4,6 +4,7 @@ public class Pawn extends Piece{
 	public Pawn (PieceColour a){
         // super(symbolIn);
         // Pawn.colour = a;
+        colour = a;
         if(a == PieceColour.WHITE){
             setSymbol("\u2659");
         }else{
@@ -13,10 +14,10 @@ public class Pawn extends Piece{
     }
 
     public boolean isLegitMove(int a, int b, int c, int d){
-        if(d-b>0){//Blacks move
-            if(d-b==2){
+        if(c-a>0){//Blacks move
+            if(c-a==2){
 
-                if(c-a==1 | c-a==-1){
+                if(d-b==1 | d-b==-1){
                     if(Board.hasPiece(c,d)==true){
                         if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                             return true;
@@ -28,10 +29,10 @@ public class Pawn extends Piece{
                         return false;
                     }
                 }else{
-                 if(b==1 && (a>=0 && a<=7) ){
+                 if(a==1 && (b>=0 && b<=7) ){
                     if(Board.hasPiece(c,d)==true){
                         return false;
-                    }else if(Board.hasPiece(c,d+1)==true){
+                    }else if(Board.hasPiece(c-1,d)==true){
                         return false;
                     }else{
                         return true;
@@ -44,8 +45,8 @@ public class Pawn extends Piece{
                 }
 
  
-            }else if(d-b==1){
-                if(c-a==1 | c-a==-1){
+            }else if(c-a==1){
+                if(d-b==1 | d-b==-1){
                     if(Board.hasPiece(c,d)==true){
                         if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                             return true;
@@ -66,10 +67,10 @@ public class Pawn extends Piece{
 
             }
 
-        }else if(d-b<0){//Whites move
-            if(b-d==2){
+        }else if(c-a<0){//Whites move
+            if(a-c==2){
 
-                if(c-a==1 | c-a==-1){
+                if(d-b==1 | d-b==-1){
                     if(Board.hasPiece(c,d)==true){
                         if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                             return true;
@@ -81,10 +82,10 @@ public class Pawn extends Piece{
                         return false;
                     }
                 }else{
-                 if(b==6 && (a>=0 && a<=7) ){
+                 if(a==6 && (b>=0 && b<=7) ){
                     if(Board.hasPiece(c,d)==true){
                         return false;
-                    }else if(Board.hasPiece(c,d-1)==true){
+                    }else if(Board.hasPiece(c+1,d)==true){
                         return false;
                     }else{
                         return true;
@@ -97,8 +98,8 @@ public class Pawn extends Piece{
                 }
 
  
-            }else if(b-d==1){
-                if(c-a==1 | c-a==-1){
+            }else if(a-c==1){
+                if(d-b==1 | d-b==-1){
                     if(Board.hasPiece(c,d)==true){
                         if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                             return true;

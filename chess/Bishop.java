@@ -4,6 +4,7 @@ public class Bishop extends Piece{
     public Bishop (PieceColour a){
         //  super(colour);
         // Bishop.colour = a;
+        colour = a;
         if(a == PieceColour.WHITE){
             setSymbol("\u2657");
         }else{
@@ -15,7 +16,7 @@ public class Bishop extends Piece{
         if( (d-b==c-a && d-b!=0) | (d-b==-(c-a) && d-b!=0) ){
             if(d-b==c-a){
                 if(d-b>0){
-                 for(int i=0; i<=d-b; i++){
+                 for(int i=1; i<=d-b; i++){
                      if(Board.hasPiece(a+i,b+i)==true && i!=d-b){
                         return false;
                     }else{
@@ -35,8 +36,8 @@ public class Bishop extends Piece{
                  } 
 
                 }else if(d-b<0){
-                 for(int i=0; i<=b-d; i++){
-                     if(Board.hasPiece(a-i,b-i)==true && i!=d-b){
+                 for(int i=1; i<=b-d; i++){
+                     if(Board.hasPiece(a-i,b-i)==true && i!=b-d){
                         return false;
                     }else{
                         if(i==b-d){
@@ -58,7 +59,7 @@ public class Bishop extends Piece{
 
             }else if(d-b==-(c-a)){
                 if(d-b>0){
-                 for(int i=0; i<=d-b; i++){
+                 for(int i=1; i<=d-b; i++){
                      if(Board.hasPiece(a-i,b+i)==true && i!=d-b){
                         return false;
                     }else{
@@ -78,8 +79,8 @@ public class Bishop extends Piece{
                  } 
 
                 }else if(d-b<0){
-                 for(int i=0; i<=b-d; i++){
-                     if(Board.hasPiece(a+i,b-i)==true && i!=d-b){
+                 for(int i=1; i<=b-d; i++){
+                     if(Board.hasPiece(a+i,b-i)==true && i!=b-d){
                         return false;
                     }else{
                         if(i==b-d){

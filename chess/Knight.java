@@ -3,6 +3,7 @@ package chess;
 public class Knight extends Piece{
     public Knight (PieceColour a){
 
+        colour = a;
         if(a == PieceColour.WHITE){
             setSymbol("\u2658");
         }else{

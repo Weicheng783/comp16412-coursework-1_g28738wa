@@ -4,6 +4,7 @@ public class Rook extends Piece{
     
     public Rook (PieceColour a){
         // Rook.colour = a;
+        colour = a;
         if(a == PieceColour.WHITE){
             setSymbol("\u2656");
         }else{
@@ -15,8 +16,9 @@ public class Rook extends Piece{
         if(c-a==0 && d-b !=0){
             if(d-b < 0){
 
-                for (int i=b; i>=d; i--){
+                for (int i=b-1; i>=d; i--){
                     if(Board.hasPiece(a,i)==true && i!=d){
+                        // if(i==b){i--; continue;}s
                         return false;
                     }else{
                         if(i==d){
@@ -37,8 +39,9 @@ public class Rook extends Piece{
 
             }else if(d-b>0){
 
-                for (int i=b; i<=d; i++){
+                for (int i=b+1; i<=d; i++){
                     if(Board.hasPiece(a,i)==true && i!=d){
+                        // if(i==b){i++; continue;}
                         return false;
                     }else{
                         if(i==d){
@@ -63,9 +66,12 @@ public class Rook extends Piece{
         }else if(d-b==0 && c-a!=0){
             if(c-a < 0){
 
-                for (int i=a; i>=c; i--){
+                for (int i=a-1; i>=c; i--){
                     if(Board.hasPiece(i,b)==true && i!=c){
+
+                        // if(i==a){i--; continue;}
                         return false;
+                        
                     }else{
                         if(i==c){
                             if(Board.hasPiece(c,d)==true){
@@ -85,8 +91,9 @@ public class Rook extends Piece{
 
             }else if(c-a>0){
 
-                for (int i=a; i<=c; i++){
+                for (int i=a+1; i<=c; i++){
                     if(Board.hasPiece(i,b)==true && i!=c){
+                        // if(i==a){i++; continue;}
                         return false;
                     }else{
                         if(i==c){

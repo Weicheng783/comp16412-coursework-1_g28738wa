@@ -32,15 +32,19 @@ public class Game {
 				do{
 				 do{
 					origin = consoleIn.readLine("> Enter origin: ");
-					
+					// System.out.println(ci.x);
+					// System.out.println(ci.y);
 					
 				 }while(ci.checkCoordinateValidity(origin) == false | Board.hasPiece(ci.x,ci.y)==false );
-					
-					if(turns == 0){
+					// System.out.println(Board.hasPiece(ci.x,ci.y));
+					if(turns == 1){
 						if(Board.getPiece(ci.x,ci.y).colour == PieceColour.WHITE){
 							turnsCheck = true;
+							// System.out.println("1");
 						}else{
 							turnsCheck = false;
+							// System.out.println("2");
+							// System.out.println(Board.getPiece(ci.x,ci.y).getColour());
 						}
 					}else{
 						if(Board.getPiece(ci.x,ci.y).colour == PieceColour.BLACK){
@@ -50,22 +54,20 @@ public class Game {
 						}
 													
 					}
+					// System.out.println(turnsCheck);
 				}while(turnsCheck == false);
 				ox=ci.x;
 				oy=ci.y;
 				String destination;
 				do{
 					destination = consoleIn.readLine("> Enter destination: ");
-				}while(ci.checkCoordinateValidity(destination) == false );
+				}while(ci.checkCoordinateValidity(destination) == false | Board.getPiece(ox,oy).isLegitMove(ox,oy,ci.x,ci.y) == false );
 				dx=ci.x;
 				dy=ci.y;
-			}while( Board.getPiece(ox,oy).isLegitMove(ox,oy,dx,dy) == false );
+			}while(Board.movePiece(ox,oy,dx,dy,Board.getPiece(ox,oy))==false );
 
-				if(Board.movePiece(ox,oy,dx,dy,Board.getPiece(ox,oy))==true){
-					Board.printBoard();
-				}
-
-			
+				Board.printBoard();
+				
 		}		
 	}
 	

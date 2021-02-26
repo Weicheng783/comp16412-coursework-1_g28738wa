@@ -4,6 +4,7 @@ public class King extends Piece{
     public King (PieceColour a){
         // super(symbolIn);
         // King.colour = a;
+        colour = a;
         if(a == PieceColour.WHITE){
             setSymbol("\u2654");
         }else{
@@ -13,6 +14,8 @@ public class King extends Piece{
     }
 
     public boolean isLegitMove(int a, int b, int c, int d){
+
+
         if( (c-a == -1 | c-a==1) && (d-b==-1 | d-b==1) ){
             if(Board.hasPiece(c,d)==true){
                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
