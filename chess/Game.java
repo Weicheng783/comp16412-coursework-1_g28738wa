@@ -3,12 +3,13 @@ import java.io.Console;
 
 public class Game {
 	private static boolean gameEnd=false;
-	static int turns;
+	static String turns = "Whites";
 	static int ox;
 	static int oy;
 	static int dx;
 	static int dy;
 	static boolean turnsCheck;
+	static String destination;
 
 	//This method requires your input
 	public static void play(){
@@ -17,12 +18,12 @@ public class Game {
 			CheckInput ci = new CheckInput();
 			
 			// CheckInput ci = null;
-			if(turns == 0){
-				turns = 1;
+			if(turns == "Whites"){
+				
 				System.out.println("------ Whites move ------");
 				
 			}else{
-				turns = 0;
+				
 				System.out.println("------ Blacks move ------");
 			}
 			
@@ -34,10 +35,12 @@ public class Game {
 					origin = consoleIn.readLine("> Enter origin: ");
 					// System.out.println(ci.x);
 					// System.out.println(ci.y);
+					ci.checkCoordinateValidity(origin);
 					
 				 }while(ci.checkCoordinateValidity(origin) == false | Board.hasPiece(ci.x,ci.y)==false );
 					// System.out.println(Board.hasPiece(ci.x,ci.y));
-					if(turns == 1){
+					if(turns == "Whites"){
+						turns = "Blacks";
 						if(Board.getPiece(ci.x,ci.y).colour == PieceColour.WHITE){
 							turnsCheck = true;
 							// System.out.println("1");
@@ -47,6 +50,7 @@ public class Game {
 							// System.out.println(Board.getPiece(ci.x,ci.y).getColour());
 						}
 					}else{
+						turns = "Whites";
 						if(Board.getPiece(ci.x,ci.y).colour == PieceColour.BLACK){
 							turnsCheck = true;
 						}else{
@@ -58,17 +62,37 @@ public class Game {
 				}while(turnsCheck == false);
 				ox=ci.x;
 				oy=ci.y;
-				String destination;
-				do{
-					destination = consoleIn.readLine("> Enter destination: ");
-				}while(ci.checkCoordinateValidity(destination) == false | Board.getPiece(ox,oy).isLegitMove(ox,oy,ci.x,ci.y) == false );
+				
+
+				destination = consoleIn.readLine("> Enter destination: ");
+				ci.checkCoordinateValidity(destination);
+
 				dx=ci.x;
 				dy=ci.y;
-			}while(Board.movePiece(ox,oy,dx,dy,Board.getPiece(ox,oy))==false );
 
+
+			}while(ci.checkCoordinateValidity(destination) == false | Board.getPiece(ox,oy).isLegitMove(ox,oy,ci.x,ci.y) == false );
+				if(Board.hasPiece(ci.x,ci.y)){
+					if(Board.getPiece(ci.x,ci.y).getSymbol()=="\u2654" | Board.getPiece(ci.x,ci.y).getSymbol()=="\u265A"){
+						Game.gameEnd = true;
+					}
+				}
+				Board.movePiece(ox,oy,dx,dy,Board.getPiece(ox,oy));
 				Board.printBoard();
+
 				
-		}		
+		}	
+
+		System.out.println("The Game is Over now.");
+		if(turns == "Blacks"){
+			turns = "Whites";
+		}else{
+			turns = "Blacks";
+		}
+
+		System.out.println("The Winner is " + turns + " player! Congrats!");
+
+		System.exit(0);			
 	}
 	
 	//This method should not be edited

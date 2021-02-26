@@ -6,7 +6,7 @@ public class CheckInput {
 	
 	//This method requires your input
 	public boolean checkCoordinateValidity(String input){
-		if(input.equals("END")){
+		if(input.equals("END")| input.equals("end")){
 			System.exit(0);
 		}
 		

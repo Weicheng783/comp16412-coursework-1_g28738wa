@@ -19,6 +19,7 @@ public class Rook extends Piece{
                 for (int i=b-1; i>=d; i--){
                     if(Board.hasPiece(a,i)==true && i!=d){
                         // if(i==b){i--; continue;}s
+
                         return false;
                     }else{
                         if(i==d){
