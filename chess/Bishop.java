@@ -12,6 +12,7 @@ public class Bishop extends Piece{
         }
     }
 
+    @Override
     public boolean isLegitMove(int a, int b, int c, int d){
         if( (d-b==c-a && d-b!=0) | (d-b==-(c-a) && d-b!=0) ){
             if(d-b==c-a){

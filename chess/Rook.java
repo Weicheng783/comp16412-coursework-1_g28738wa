@@ -12,13 +12,14 @@ public class Rook extends Piece{
         }
     }
 
+    @Override
     public boolean isLegitMove(int a, int b, int c, int d){
         if(c-a==0 && d-b !=0){
             if(d-b < 0){
 
                 for (int i=b-1; i>=d; i--){
                     if(Board.hasPiece(a,i)==true && i!=d){
-                        // if(i==b){i--; continue;}s
+
 
                         return false;
                     }else{
@@ -42,7 +43,7 @@ public class Rook extends Piece{
 
                 for (int i=b+1; i<=d; i++){
                     if(Board.hasPiece(a,i)==true && i!=d){
-                        // if(i==b){i++; continue;}
+
                         return false;
                     }else{
                         if(i==d){
@@ -70,7 +71,6 @@ public class Rook extends Piece{
                 for (int i=a-1; i>=c; i--){
                     if(Board.hasPiece(i,b)==true && i!=c){
 
-                        // if(i==a){i--; continue;}
                         return false;
                         
                     }else{

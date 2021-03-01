@@ -11,7 +11,8 @@ public class Queen extends Piece{
             setSymbol("\u265B");
         }
     }
-
+    
+    @Override
     public boolean isLegitMove(int a, int b, int c, int d){
         if(c-a==0 && d-b !=0){
             if(d-b < 0){

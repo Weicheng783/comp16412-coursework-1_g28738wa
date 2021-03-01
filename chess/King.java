@@ -13,6 +13,7 @@ public class King extends Piece{
         
     }
 
+    @Override
     public boolean isLegitMove(int a, int b, int c, int d){
 
 

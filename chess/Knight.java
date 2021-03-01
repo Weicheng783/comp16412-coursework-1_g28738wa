@@ -12,6 +12,7 @@ public class Knight extends Piece{
         
     }
 
+    @Override
     public boolean isLegitMove(int a, int b, int c, int d){
         if( (c-a==2 | c-a==-2) && (d-b==1 | d-b==-1) ){
             if(Board.hasPiece(c,d)==true){

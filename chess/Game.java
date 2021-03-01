@@ -31,6 +31,7 @@ public class Game {
 			    Console consoleIn = System.console();
 				String origin;
 				do{
+					consoleIn = System.console();
 				 do{
 					origin = consoleIn.readLine("> Enter origin: ");
 					// System.out.println(ci.x);
@@ -40,7 +41,7 @@ public class Game {
 				 }while(ci.checkCoordinateValidity(origin) == false | Board.hasPiece(ci.x,ci.y)==false );
 					// System.out.println(Board.hasPiece(ci.x,ci.y));
 					if(turns == "Whites"){
-						turns = "Blacks";
+						// turns = "Blacks";
 						if(Board.getPiece(ci.x,ci.y).colour == PieceColour.WHITE){
 							turnsCheck = true;
 							// System.out.println("1");
@@ -50,7 +51,7 @@ public class Game {
 							// System.out.println(Board.getPiece(ci.x,ci.y).getColour());
 						}
 					}else{
-						turns = "Whites";
+						// turns = "Whites";
 						if(Board.getPiece(ci.x,ci.y).colour == PieceColour.BLACK){
 							turnsCheck = true;
 						}else{
@@ -79,6 +80,11 @@ public class Game {
 				}
 				Board.movePiece(ox,oy,dx,dy,Board.getPiece(ox,oy));
 				Board.printBoard();
+				if(turns=="Whites"){
+					turns="Blacks";
+				}else{
+					turns="Whites";
+				}
 
 				
 		}	

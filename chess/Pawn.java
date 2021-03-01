@@ -13,6 +13,7 @@ public class Pawn extends Piece{
         
     }
 
+    @Override
     public boolean isLegitMove(int a, int b, int c, int d){
         if(c-a>0){//Blacks move
             if(c-a==2){
