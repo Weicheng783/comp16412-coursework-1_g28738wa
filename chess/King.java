@@ -22,6 +22,7 @@ public class King extends Piece{
                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                     return true;
                 }else{
+                    System.out.println("Invalid movement due to the rules of movement of King."); 
                     return false;
                 }
             }else{
@@ -32,6 +33,7 @@ public class King extends Piece{
                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                     return true;
                 }else{
+                    System.out.println("Invalid movement due to the rules of movement of King."); 
                     return false;
                 }
             }else{
@@ -42,12 +44,14 @@ public class King extends Piece{
                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                     return true;
                 }else{
+                    System.out.println("Invalid movement due to the rules of movement of King."); 
                     return false;
                 }
             }else{
                 return true;
             }
         }else{
+            System.out.println("Invalid movement due to the rules of movement of King."); 
             return false;
         }
         

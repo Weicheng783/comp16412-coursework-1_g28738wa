@@ -19,6 +19,7 @@ public class Knight extends Piece{
                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                     return true;
                 }else{
+                    System.out.println("Invalid movement due to the rules of movement of Knight."); 
                     return false;
                 }
             }else{
@@ -30,12 +31,14 @@ public class Knight extends Piece{
                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                     return true;
                 }else{
+                    System.out.println("Invalid movement due to the rules of movement of Knight."); 
                     return false;
                 }
             }else{
                 return true;
             }
         }else{
+            System.out.println("Invalid movement due to the rules of movement of Knight."); 
             return false;
         }
     }

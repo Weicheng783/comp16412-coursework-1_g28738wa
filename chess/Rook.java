@@ -20,7 +20,7 @@ public class Rook extends Piece{
                 for (int i=b-1; i>=d; i--){
                     if(Board.hasPiece(a,i)==true && i!=d){
 
-
+                        System.out.println("Invalid movement due to the rules of movement of Rook."); 
                         return false;
                     }else{
                         if(i==d){
@@ -28,6 +28,7 @@ public class Rook extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Rook.");
                                     return false;
                                 }
                             }else{
@@ -43,7 +44,7 @@ public class Rook extends Piece{
 
                 for (int i=b+1; i<=d; i++){
                     if(Board.hasPiece(a,i)==true && i!=d){
-
+                        System.out.println("Invalid movement due to the rules of movement of Rook.");
                         return false;
                     }else{
                         if(i==d){
@@ -51,6 +52,7 @@ public class Rook extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Rook.");
                                     return false;
                                 }
                             }else{
@@ -70,6 +72,7 @@ public class Rook extends Piece{
 
                 for (int i=a-1; i>=c; i--){
                     if(Board.hasPiece(i,b)==true && i!=c){
+                        System.out.println("Invalid movement due to the rules of movement of Rook.");
 
                         return false;
                         
@@ -79,6 +82,7 @@ public class Rook extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Rook.");
                                     return false;
                                 }
                             }else{
@@ -94,7 +98,8 @@ public class Rook extends Piece{
 
                 for (int i=a+1; i<=c; i++){
                     if(Board.hasPiece(i,b)==true && i!=c){
-                        // if(i==a){i++; continue;}
+                        System.out.println("Invalid movement due to the rules of movement of Rook.");
+
                         return false;
                     }else{
                         if(i==c){
@@ -102,6 +107,7 @@ public class Rook extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Rook.");
                                     return false;
                                 }
                             }else{
@@ -116,8 +122,10 @@ public class Rook extends Piece{
 
             }
         }else{
+            System.out.println("Invalid movement due to the rules of movement of Rook.");
             return false;
         }
+        System.out.println("Invalid movement due to the rules of movement of Rook.");
         return false;
     }
 }

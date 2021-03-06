@@ -46,6 +46,7 @@ public class Game {
 							turnsCheck = true;
 							// System.out.println("1");
 						}else{
+							System.out.println("Turns check failed, WHITE chess move, but you selected black chess.");
 							turnsCheck = false;
 							// System.out.println("2");
 							// System.out.println(Board.getPiece(ci.x,ci.y).getColour());
@@ -55,6 +56,7 @@ public class Game {
 						if(Board.getPiece(ci.x,ci.y).colour == PieceColour.BLACK){
 							turnsCheck = true;
 						}else{
+							System.out.println("Turns check failed, BLACK chess move, but you selected white chess.");
 							turnsCheck = false;
 						}
 													

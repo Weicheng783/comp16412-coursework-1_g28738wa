@@ -2,8 +2,7 @@ package chess;
 
 public class Queen extends Piece{
     public Queen (PieceColour a){
-        // super(symbolIn);
-        // Queen.colour = a;
+
         colour = a;
         if(a == PieceColour.WHITE){
             setSymbol("\u2655");
@@ -19,7 +18,8 @@ public class Queen extends Piece{
 
                 for (int i=b-1; i>=d; i--){
                     if(Board.hasPiece(a,i)==true && i!=d){
-                        // if(i==b){i--; continue;}
+
+                        System.out.println("Invalid movement due to the rules of movement of Queen."); 
                         return false;
                     }else{
                         if(i==d){
@@ -27,6 +27,7 @@ public class Queen extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Queen."); 
                                     return false;
                                 }
                             }else{
@@ -42,7 +43,8 @@ public class Queen extends Piece{
 
                 for (int i=b+1; i<=d; i++){
                     if(Board.hasPiece(a,i)==true && i!=d){
-                        // if(i==b){i++; continue;}
+
+                        System.out.println("Invalid movement due to the rules of movement of Queen."); 
                         return false;
                     }else{
                         if(i==d){
@@ -50,6 +52,7 @@ public class Queen extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Queen."); 
                                     return false;
                                 }
                             }else{
@@ -68,7 +71,8 @@ public class Queen extends Piece{
 
                 for (int i=a-1; i>=c; i--){
                     if(Board.hasPiece(i,b)==true && i!=c){
-                        // if(i==a){i--; continue;}
+
+                        System.out.println("Invalid movement due to the rules of movement of Queen."); 
                         return false;
                     }else{
                         if(i==c){
@@ -91,7 +95,8 @@ public class Queen extends Piece{
 
                 for (int i=a+1; i<=c; i++){
                     if(Board.hasPiece(i,b)==true && i!=c){
-                        // if(i==a){i++; continue;}
+                        System.out.println("Invalid movement due to the rules of movement of Queen."); 
+
                         return false;
                     }else{
                         if(i==c){
@@ -99,6 +104,7 @@ public class Queen extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Queen."); 
                                     return false;
                                 }
                             }else{
@@ -118,6 +124,7 @@ public class Queen extends Piece{
                 if(d-b>0){
                  for(int i=1; i<=d-b; i++){
                      if(Board.hasPiece(a+i,b+i)==true && i!=d-b){
+                         System.out.println("Invalid movement due to the rules of movement of Queen."); 
                         return false;
                     }else{
                         if(i==d-b){
@@ -125,6 +132,7 @@ public class Queen extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Queen."); 
                                     return false;
                                 }
                             }else{
@@ -138,6 +146,7 @@ public class Queen extends Piece{
                 }else if(d-b<0){
                  for(int i=1; i<=b-d; i++){
                      if(Board.hasPiece(a-i,b-i)==true && i!=b-d){
+                         System.out.println("Invalid movement due to the rules of movement of Queen."); 
                         return false;
                     }else{
                         if(i==b-d){
@@ -145,6 +154,7 @@ public class Queen extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Queen."); 
                                     return false;
                                 }
                             }else{
@@ -161,6 +171,7 @@ public class Queen extends Piece{
                 if(d-b>0){
                  for(int i=1; i<=d-b; i++){
                      if(Board.hasPiece(a-i,b+i)==true && i!=d-b){
+                         System.out.println("Invalid movement due to the rules of movement of Queen."); 
                         return false;
                     }else{
                         if(i==d-b){
@@ -168,6 +179,7 @@ public class Queen extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Queen."); 
                                     return false;
                                 }
                             }else{
@@ -181,6 +193,7 @@ public class Queen extends Piece{
                 }else if(d-b<0){
                  for(int i=1; i<=b-d; i++){
                      if(Board.hasPiece(a+i,b-i)==true && i!=b-d){
+                         System.out.println("Invalid movement due to the rules of movement of Queen."); 
                         return false;
                     }else{
                         if(i==b-d){
@@ -188,6 +201,7 @@ public class Queen extends Piece{
                                 if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                                     return true;
                                 }else{
+                                    System.out.println("Invalid movement due to the rules of movement of Queen."); 
                                     return false;
                                 }
                             }else{
@@ -202,8 +216,10 @@ public class Queen extends Piece{
             }
 
         }else{
+            System.out.println("Invalid movement due to the rules of movement of Queen."); 
             return false;
         }
+        System.out.println("Invalid movement due to the rules of movement of Queen."); 
         return false;
     }
 }

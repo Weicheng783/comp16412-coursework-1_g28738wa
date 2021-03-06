@@ -23,23 +23,28 @@ public class Pawn extends Piece{
                         if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                             return true;
                         }else{
+                            System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                             return false;
                         }
 
                     }else{
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }
                 }else{
                  if(a==1 && (b>=0 && b<=7) ){
                     if(Board.hasPiece(c,d)==true){
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }else if(Board.hasPiece(c-1,d)==true){
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }else{
                         return true;
                     }
 
                  }else{
+                     System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                      return false;
                  }
 
@@ -52,14 +57,17 @@ public class Pawn extends Piece{
                         if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                             return true;
                         }else{
+                            System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                             return false;
                         }
 
                     }else{
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }
                 }else{
                     if(Board.hasPiece(c,d)==true){
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }else{
                         return true;
@@ -76,23 +84,28 @@ public class Pawn extends Piece{
                         if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                             return true;
                         }else{
+                            System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                             return false;
                         }
 
                     }else{
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }
                 }else{
                  if(a==6 && (b>=0 && b<=7) ){
                     if(Board.hasPiece(c,d)==true){
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }else if(Board.hasPiece(c+1,d)==true){
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }else{
                         return true;
                     }
 
                  }else{
+                     System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                      return false;
                  }
 
@@ -105,14 +118,17 @@ public class Pawn extends Piece{
                         if(Board.getPiece(c,d).getColour() != Board.getPiece(a,b).getColour() ){
                             return true;
                         }else{
+                            System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                             return false;
                         }
 
                     }else{
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }
                 }else{
                     if(Board.hasPiece(c,d)==true){
+                        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
                         return false;
                     }else{
                         return true;
@@ -122,8 +138,10 @@ public class Pawn extends Piece{
             }
 
         }else{
+            System.out.println("Invalid movement due to the rules of movement of Pawn."); 
             return false;
         }
+        System.out.println("Invalid movement due to the rules of movement of Pawn."); 
         return false;
     }
 }

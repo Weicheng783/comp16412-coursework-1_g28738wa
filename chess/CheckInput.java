@@ -7,7 +7,10 @@ public class CheckInput {
 	//This method requires your input
 	public boolean checkCoordinateValidity(String input){
 		if(input.equals("END")| input.equals("end")){
+			System.out.println("Game is force ended."); 
 			System.exit(0);
+		}else if(input.equals("board") | input.equals("BOARD") ){
+			Board.printBoard(); //developing mode
 		}
 		
 		if(input.length() == 2){
@@ -75,12 +78,23 @@ public class CheckInput {
 					
 
 				}else{
+					System.out.println("input is invalid, please enter it again.");
 					return false;
 				}
 			}else{
+				System.out.println("input is invalid, please enter it again.");
 				return false;
 			}
+		}else if(input.equals("board") | input.equals("BOARD") ){
+
+			if(Game.turns == "Whites"){
+				System.out.println("------ Whites move ------");
+			}else{
+				System.out.println("------ Blacks move ------");
+			}
+			return false;
 		}else{
+			System.out.println("input length check is failed, please enter 2 digits.");
 			return false;
 		}
     }
